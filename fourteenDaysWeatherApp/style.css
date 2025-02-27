@@ -1,0 +1,155 @@
+/* Global styles */
+* {
+  color: rgb(7, 1, 1);
+  background-color: #e4d5d5;
+  font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Common styles for input elements and buttons */
+#cityInput,
+#cityName,
+#inputContainer,
+button {
+  margin: 3px;
+  padding: 5px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+/* Search button specific styles */
+#searchButton {
+  width: 100px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Container for the city input */
+#inputContainer {
+  margin-right: 52px;
+}
+
+/* Styling for the city search section */
+.citySearch {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Container for weather information */
+#weatherContainer {
+  position: relative;
+  margin-top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  max-width: 1300px;
+  border: 5px solid rgba(97, 95, 95, 0.829);
+  border-radius: 10px;
+}
+
+/* Grid layout for weather icons */
+#iconsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* Styling for individual weather icons */
+.icons {
+  height: 100%;
+  width: 100%;
+  border: 5px solid rgb(48, 47, 47);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image styling */
+.image,
+.imgClass {
+  height: 140px;
+  width: 100%;
+}
+
+/* Styling for weather information */
+.weather,
+.minValues,
+.maxValues,
+.precipitationValue,
+.windVelocity {
+  text-align: center;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+/* Hide elements by default */
+#result,
+#screenCap {
+  display: none;
+}
+
+/* Styling for email part */
+.screenEmailPart {
+  margin-top: -24%;
+}
+
+/* Styling for today's weather */
+#today_weather {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 10px;
+  border: 5px solid rgba(97, 95, 95, 0.829);
+  border-radius: 10px;
+  width: 225px;
+  height: 420px;
+  margin-bottom: 20%;
+}
+
+/* Styling for form */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and button styling within the form */
+.form input[type="text"],
+.form input[type="email"],
+.form button {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Button hover effect */
+.form button, #saveButton {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+}

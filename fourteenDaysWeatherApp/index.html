@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "8uObLsg1-B74Fr4E2",
+            });
+        })();
+    </script>
+    <script>
+
+
+function SendEmail() {
+    // Capture the image from the result img tag
+    let resultImg = document.getElementById('result');
+
+    // Convert the image to Base64 format
+    let imageData = resultImg.src.split(',')[1];
+
+    // Get other input values
+    let fullName = document.getElementById('fullName').value;
+    let email = document.getElementById('email_id').value;
+
+
+    // Fetch the default attachment file
+    fetch('path/to/default/attachment.jpg')
+        .then(response => response.blob())
+        .then(blob => {
+            const reader = new FileReader();
+            reader.readAsDataURL(blob);
+            reader.onload = function () {
+                const base64Attachment = reader.result.split(',')[1];
+
+                // Send email with attachment and other parameters
+                emailjs.send('service_e55cbyf', 'template_24hyhzq', {
+                    from_name: fullName,
+                    email_id: email,
+                    my_param: imageData, // Attach the captured image
+                    form_attachment: base64Attachment // Attach the default file as Base64
+                }).then(function (res) {
+                    alert("Success!" + res.status);
+                });
+            };
+        })
+        .catch(err => console.error('Error loading default attachment:', err));
+}
+
+    </script>
+
+    <title>Document</title>
+
+</head>
+<body onload="DefaultScreen()">
+    <div class="citySearch">
+        <center><h1>Welcome to Klimix</h1><h2>Receive Your Forecast in a few Clicks...</h2></center>
+        <p id="inputContainer">City: <input type="text" id="cityInput" placeholder="type a city"></p>
+       <center> <button type="button" onclick="GetInfo()" id="searchButton">Search</button></center>
+
+    </div>
+    <div class="allWeather">
+      <center>
+        <div id="today_weather">
+          <p>Today's Weather</p>
+        </div>
+      </center>
+
+      <div id = "weatherContainer">
+          <h2 id="cityName"></h2>
+          <div id="iconsContainer">
+              <div class = "icons">
+                  <p class="weather" id="day1"></p>
+                  <div class="image"><img src="dots.png" class="imgClass" id="img1"></div>
+                  <p class="minValues" id="day1Min">Loading...</p>
+                  <p class="maxValues" id="day1Max">Loading...</p>
+                  <p class="precipitationValue" id="day1Precip">Loading...</p>
+                  <p class="windVelocity" id="day1Wind">Loading...</p>
+              </div>
+              <div class = "icons">
+                  <p class="weather" id="day2"></p>
+                  <div class="image"><img src="dots.png" class="imgClass" id="img2"></div>
+                  <p class="minValues" id="day2Min">Loading...</p>
+                  <p class="maxValues" id="day2Max">Loading...</p>
+                  <p class="precipitationValue" id="day2Precip">Loading...</p>
+                  <p class="windVelocity" id="day2Wind">Loading...</p>
+              </div>
+              <div class = "icons">
+                  <p class="weather" id="day3"></p>
+                  <div class="image"><img src="dots.png" class="imgClass" id="img3"></div>
+                  <p class="minValues" id="day3Min">Loading...</p>
+                  <p class="maxValues" id="day3Max">Loading...</p>
+                  <p class="precipitationValue" id="day3Precip">Loading...</p>
+                  <p class="windVelocity" id="day3Wind">Loading...</p>
+              </div>
+              <div class = "icons">
+                  <p class="weather" id="day4"></p>
+                  <div class="image"><img src="dots.png" class="imgClass" id="img4"></div>
+                  <p class="minValues" id="day4Min">Loading...</p>
+                  <p class="maxValues" id="day4Max">Loading...</p>
+                  <p class="precipitationValue" id="day4Precip">Loading...</p>
+                  <p class="windVelocity" id="day4Wind">Loading...</p>
+              </div>
+              <div class = "icons">
+                  <p class="weather" id="day5"></p>
+                  <div class="image"><img src="dots.png" class="imgClass" id="img5"></div>
+                  <p class="minValues" id="day5Min">Loading...</p>
+                  <p class="maxValues" id="day5Max">Loading...</p>
+                  <p class="precipitationValue" id="day5Precip">Loading...</p>
+                  <p class="windVelocity" id="day5Wind">Loading...</p>
+              </div>
+              <div class = "icons">
+                <p class="weather" id="day6"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img6"></div>
+                <p class="minValues" id="day6Min">Loading...</p>
+                <p class="maxValues" id="day6Max">Loading...</p>
+                <p class="precipitationValue" id="day6Precip">Loading...</p>
+                <p class="windVelocity" id="day6Wind">Loading...</p>
+            </div>
+            <div class = "icons">
+                <p class="weather" id="day7"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img7"></div>
+                <p class="minValues" id="day7Min">Loading...</p>
+                <p class="maxValues" id="day7Max">Loading...</p>
+                <p class="precipitationValue" id="day7Precip">Loading...</p>
+                <p class="windVelocity" id="day7Wind">Loading...</p>
+            </div>
+            <div class = "icons">
+                <p class="weather" id="day8"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img8"></div>
+                <p class="minValues" id="day8Min">Loading...</p>
+                <p class="maxValues" id="day8Max">Loading...</p>
+                <p class="precipitationValue" id="day8Precip">Loading...</p>
+                <p class="windVelocity" id="day8Wind">Loading...</p>
+            </div>
+            <div class = "icons">
+                <p class="weather" id="day9"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img9"></div>
+                <p class="minValues" id="day9Min">Loading...</p>
+                <p class="maxValues" id="day9Max">Loading...</p>
+                <p class="precipitationValue" id="day9Precip">Loading...</p>
+                <p class="windVelocity" id="day9Wind">Loading...</p>
+            </div>
+            <div class = "icons">
+                <p class="weather" id="day10"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img10"></div>
+                <p class="minValues" id="day10Min">Loading...</p>
+                <p class="maxValues" id="day10Max">Loading...</p>
+                <p class="precipitationValue" id="day10Precip">Loading...</p>
+                <p class="windVelocity" id="day10Wind">Loading...</p>
+            </div>
+            <div class = "icons">
+              <p class="weather" id="day11"></p>
+              <div class="image"><img src="dots.png" class="imgClass" id="img11"></div>
+              <p class="minValues" id="day11Min">Loading...</p>
+              <p class="maxValues" id="day11Max">Loading...</p>
+              <p class="precipitationValue" id="day11Precip">Loading...</p>
+              <p class="windVelocity" id="day11Wind">Loading...</p>
+          </div>
+          <div class = "icons">
+              <p class="weather" id="day12"></p>
+              <div class="image"><img src="dots.png" class="imgClass" id="img12"></div>
+              <p class="minValues" id="day12Min">Loading...</p>
+              <p class="maxValues" id="day12Max">Loading...</p>
+              <p class="precipitationValue" id="day12Precip">Loading...</p>
+              <p class="windVelocity" id="day12Wind">Loading...</p>
+          </div>
+          <div class = "icons">
+              <p class="weather" id="day13"></p>
+              <div class="image"><img src="dots.png" class="imgClass" id="img13"></div>
+              <p class="minValues" id="day13Min">Loading...</p>
+              <p class="maxValues" id="day13Max">Loading...</p>
+              <p class="precipitationValue" id="day13Precip">Loading...</p>
+              <p class="windVelocity" id="day13Wind">Loading...</p>
+          </div>
+          <div class = "icons">
+              <p class="weather" id="day14"></p>
+              <div class="image"><img src="dots.png" class="imgClass" id="img14"></div>
+              <p class="minValues" id="day14Min">Loading...</p>
+              <p class="maxValues" id="day14Max">Loading...</p>
+              <p class="precipitationValue" id="day14Precip">Loading...</p>
+              <p class="windVelocity" id="day14Wind">Loading...</p>
+          </div>
+          </div>
+      </div>
+    </div>
+
+
+    <center>
+      <div class="screenEmailPart">
+        <div id="main">
+          <h4>Save Weather Forecast For the Next 14 days</h4>
+        </div>
+        <div>
+          <button id="saveButton" onclick="capture()">Save</button>
+        </div>
+        <div id="screenCap">
+          <img src="" alt="" id="result">
+        </div>
+      </div>
+      <div class="emailPart">
+        <h4>After Saving the Weather Forecast for the Next 14 days, Type Your Email below to Get the Data </h4>
+        <div class="form">
+          <input type="text" id="fullName" placeholder="Name" required>
+          <input type="email" id="email_id" required placeholder="mail address">
+          <button onclick="SendEmail()">Send</button>
+        </div>
+
+      </div>
+
+    </center>
+
+
+    <script src="./html2canvas.min.js" defer></script>
+    <script src="main.js"></script>
+    <script>
+      function capture() {
+          html2canvas(document.getElementById("weatherContainer"), {
+              letterRendering: 1,
+              allowTaint: true,
+              useCORS: true,
+          })
+              .then(function (canvas) {
+                  document.getElementById("result").src = canvas.toDataURL("image/png", 0.5);
+              })
+              .catch((e) => {
+                  alert(e);
+              });
+              console.log(document.querySelector("#result"))
+      }
+    </script>
+
+</body>
+</html>
