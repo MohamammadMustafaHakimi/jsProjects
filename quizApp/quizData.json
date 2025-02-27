@@ -1,0 +1,50 @@
+[
+  {
+    "question": "What makes neon lights glow brightly in different colors?",
+    "a": "The type of gas used",
+    "b": "The color of the glass tube",
+    "c": "The temperature of the gas",
+    "d": "The thickness of the tube",
+    "correct": "a"
+  },
+  {
+    "question": "Which feature of neon makes it ideal for creating signs?",
+    "a": "It is highly reactive",
+    "b": "It emits a bright light when electrified",
+    "c": "It is the heaviest noble gas",
+    "d": "It has a high melting point",
+    "correct": "b"
+  },
+  {
+    "question": "Why do neon lights work well in cold weather?",
+    "a": "Neon gas expands in the cold",
+    "b": "Cold temperatures increase neon's luminosity",
+    "c": "Neon remains stable and glows at low temperatures",
+    "d": "Cold air amplifies the neon color",
+    "correct": "c"
+  },
+  {
+    "question": "Why are neon lights often associated with retro aesthetics?",
+    "a": "They were invented in the 1970s",
+    "b": "They were widely used in classic diners and motels",
+    "c": "Neon lights have a natural sepia tone",
+    "d": "Neon lights were banned for a time and then made a comeback",
+    "correct": "b"
+  },
+  {
+    "question": "How can the color of neon light be changed without altering the gas?",
+    "a": "By changing the gas pressure",
+    "b": "By altering the electrical current",
+    "c": "By using colored glass tubes",
+    "d": "By mixing neon with water vapor",
+    "correct": "c"
+  },
+  {
+    "question": "What happens to neon lights when they reach the end of their lifespan?",
+    "a": "They explode",
+    "b": "They fade to a dim red glow",
+    "c": "They make a humming noise",
+    "d": "They flicker before turning off completely",
+    "correct": "d"
+  }
+]
